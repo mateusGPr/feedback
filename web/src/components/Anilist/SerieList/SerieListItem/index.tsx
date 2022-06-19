@@ -19,7 +19,7 @@ export function SerieListItem(media: SerieListItemProps) {
     return (
         <div className="SerieList-Container">
             <div className="SerieList-Content">
-                <img className="SerieList-Image" src={media.coverImage.large} />
+                <img className="SerieList-Image" src={media.coverImage.large} crossOrigin="anonymous" />
                 <div className="SerieList-Details">
                     <h2
                         className="SerieList-Details-Title">
