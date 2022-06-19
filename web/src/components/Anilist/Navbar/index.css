@@ -1,0 +1,33 @@
+@import-normalize;
+@tailwind base;
+@tailwind components;
+
+@layer components {
+    .NavBar {
+      @apply fixed z-50 top-0 left-0 h-16 w-screen flex flex-row justify-end
+      bg-gray-900 shadow-lg px-4;
+    }
+
+    .NavBar-Icon {
+      @apply relative flex items-center justify-center 
+      h-12 w-12 mt-2 mb-2 my-auto  
+    bg-gray-600 hover:bg-green-600 
+    text-green-500 hover:text-white
+      hover:rounded-xl rounded-3xl
+      transition-all duration-500 ease-linear
+      cursor-pointer shadow-lg hover:animate-pulse;
+    }
+
+    .NavBar-ToolTip {
+      @apply absolute w-auto p-2 m-2 min-w-max top-14 rounded-md shadow-md
+      text-white bg-gray-900 
+      text-xs font-bold 
+      transition-all duration-100 scale-0 origin-top;
+    }
+
+    .NavBar-Divider{
+      @apply bg-gray-800 
+      border border-gray-800 rounded-full
+      mx-2;
+    }
+}
