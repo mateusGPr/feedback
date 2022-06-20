@@ -13,7 +13,7 @@ export function ScreenshotButton({ screenshot, onScreenshot }: ScreenshotButtonP
 
     async function handleTakeScreenshot() {
         setIsTakingScreenshot(true);
-        const canvas = await html2canvas(document.querySelector("html")!, {allowTaint: true, width: window.innerWidth, height: window.innerHeight});
+        const canvas = await html2canvas(document.querySelector("html")!, {allowTaint: true, width: window.innerWidth, height: 640});
         const base64image = canvas.toDataURL('image/png')
 
         onScreenshot(base64image);
