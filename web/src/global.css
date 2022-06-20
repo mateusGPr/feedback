@@ -5,11 +5,11 @@
 @layer base {
     /* Custom scrollbar */
     ::-webkit-scrollbar {
-        @apply w-1;
+        @apply w-1 h-1;
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply bg-[#C3073F];
+        @apply bg-green-600;
     }
 
     body {

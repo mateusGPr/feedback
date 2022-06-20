@@ -14,15 +14,15 @@
     }
 
     .SerieList-Container{
-        @apply z-0 w-full sm:w-[24%] p-[2px] bg-gradient-to-br from-yellow-400 via-yellow-900 to-black shadow-sm;
+        @apply z-0 w-full sm:w-[23%] p-[2px] bg-gradient-to-br from-green-400 via-teal-900 to-black shadow-sm;
     }
 
     .SerieList-Content{
-        @apply flex flex-col items-stretch justify-between h-full bg-gradient-to-br from-amber-900 via-black to-black text-white shadow-[inset_4px_4px_60px_0_rgba(0,0,0,0)];
+        @apply flex flex-col items-stretch justify-between h-full bg-gradient-to-br from-green-900 via-black to-black text-white shadow-[inset_4px_4px_60px_0_rgba(0,0,0,0)];
     }
 
     .SerieList-Image{
-        @apply w-full lg:w-auto lg:h-full flex-grow-0 hover:animate-pulse;
+        @apply w-full lg:w-auto lg:h-full flex-grow-0;
     }
 
     .SerieList-Details{
@@ -30,6 +30,6 @@
     }
 
     .SerieList-Details-Title{
-        @apply font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-yellow-600 to-yellow-800 via-amber-600;
+        @apply font-extrabold text-base text-transparent bg-clip-text bg-gradient-to-br from-green-600 to-green-800 via-green-600;
     }
 }

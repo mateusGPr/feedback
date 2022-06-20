@@ -4,7 +4,7 @@
 
 @layer components {
     .NavBar {
-      @apply fixed z-50 top-0 left-0 h-16 w-screen flex flex-row justify-end
+      @apply fixed z-50 top-0 left-0 h-16 w-screen flex flex-row justify-center
       bg-gray-900 shadow-lg px-4;
     }
 

@@ -12,9 +12,9 @@ export function SerieList({ data }: SerieListProps) {
         </header> */}
         <div className="SerieList">
             {data.Page.media.map((media: SerieListItemProps) => {
-                const title: string = media.title.romaji;
-                console.log(media.title.romaji);
-                return <SerieListItem {...media} />
+                /*const title: string = media.title.romaji;
+                console.log(media.title.romaji);*/
+                return <SerieListItem {...media} key={media.id}/>
             })}
         </div>
     </div>

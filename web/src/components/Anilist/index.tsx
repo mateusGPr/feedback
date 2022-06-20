@@ -15,7 +15,7 @@ export function Anilist() {
     });
 
     if (loading) {
-        return (<div className="h-screen w-screen flex items-center justify-center text-amber-600">
+        return (<div className="h-screen w-screen flex items-center justify-center text-green-600">
             <CircleNotch className="animate-spin h-64 w-64" />
         </div>);
     }
@@ -23,18 +23,27 @@ export function Anilist() {
     if (error) {
         return <p>Ocorreu um erro...</p>;
     }
+
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-        refetch({query: searchText as string});
+        refetch({ query: searchText as string });
     };
 
     const changeSearchText = (event: FormEvent) => {
         const element = event.target as HTMLInputElement;
         setSearchText(element.value);
     };
-    console.log(data);
+
+    if (data.Page.media.length == 0) {
+        return (<div className="flex">
+            <NavBar handleSubmit={handleSubmit} changeSearchText={changeSearchText} />
+            <div className="mt-20 flex items-center justify-center w-screen text-2xl text-green-600">
+                Sem resultados...
+            </div>
+        </div>)
+    }
     return (<div className="flex">
-        <NavBar handleSubmit={handleSubmit} changeSearchText={changeSearchText}/>
+        <NavBar handleSubmit={handleSubmit} changeSearchText={changeSearchText} />
         <SerieList data={data} />
     </div>)
 }
