@@ -16,7 +16,7 @@ export function FeedbackContentStep(
     { feedbackType, onRestartFeedback, onFeedbackSent }:
         FeedbackContentStepProps) {
     const [comment, setComment] = useState('');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState<string | null>('');
     const [screenshot, setScreenshot] = useState<string | null>(null);
     const [isSendingFeedback, setIsSendingFeedback] = useState(false);
 
@@ -24,18 +24,27 @@ export function FeedbackContentStep(
     async function handleSubmitFeedback(event: FormEvent) {
         event.preventDefault();
 
-        setIsSendingFeedback(true);
+        try {
 
+            setIsSendingFeedback(true);
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email ?? '')) {
+                console.log("Email invalido: " + email);
+                setEmail(null);
+            }
 
-        await api.post('/feedbacks', {
-            type: feedbackType,
-            comment,
-            email,
-            screenshot,
-        });
+            await api.post('/feedbacks', {
+                type: feedbackType,
+                comment,
+                email,
+                screenshot,
+            });
 
-        setIsSendingFeedback(false);
-        onFeedbackSent();
+            setIsSendingFeedback(false);
+            onFeedbackSent();
+        } catch (err) {
+            alert("Erro ao enviar o feedback.")
+            console.log(err);
+        }
     }
 
     return (<>

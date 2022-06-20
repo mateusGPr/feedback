@@ -1,4 +1,4 @@
-import { Fire, Gear, MagnifyingGlass, Plus } from "phosphor-react";
+import { MagnifyingGlass } from "phosphor-react";
 import { FormEvent, ReactNode } from "react";
 import "./index.css";
 
