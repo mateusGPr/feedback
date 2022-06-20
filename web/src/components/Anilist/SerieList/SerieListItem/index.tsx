@@ -1,4 +1,3 @@
-
 export interface SerieListItemProps {
     averageScore: number;
     coverImage: { medium: string, large: string };

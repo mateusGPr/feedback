@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
-import { SerieList } from "./SerieList"
-import { browseSeries, seriesSearch } from "./service/querys";
-import NavBar from "./Navbar";
 import { CircleNotch } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import NavBar from "./Navbar";
+import { SerieList } from "./SerieList";
+import { seriesSearch } from "./service/querys";
 
 export function Anilist() {
     const [searchText, setSearchText] = useState('' as string | null)

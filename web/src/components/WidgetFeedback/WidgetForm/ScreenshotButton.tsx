@@ -17,7 +17,7 @@ export function ScreenshotButton({ screenshot, onScreenshot }: ScreenshotButtonP
         const base64image = canvas.toDataURL('image/png')
 
         onScreenshot(base64image);
-        
+
         setIsTakingScreenshot(false);
     }
     if (screenshot) {
